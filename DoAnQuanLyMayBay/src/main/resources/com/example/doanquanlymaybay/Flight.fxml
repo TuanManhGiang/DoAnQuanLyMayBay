@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1101.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.doanquanlymaybay.controler.FlightFormController">
+   <children>
+      <BorderPane layoutX="-1.0" layoutY="-1.0" prefHeight="600.0" prefWidth="1128.0">
+         <center>
+            <TableView fx:id="table" onMouseClicked="#handleClickTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="sohieuchuyenbay" prefWidth="75.0" text="SỐ HIỆU CHUYẾN BAY" />
+                <TableColumn fx:id="sohieumaybay" prefWidth="75.0" text="SỐ HIỆU MÁY BAY" />
+                  <TableColumn fx:id="sove" prefWidth="75.0" text="SỐ VÉ" />
+                  <TableColumn fx:id="diemden" prefWidth="75.0" text="ĐIỂM ĐẾN " />
+                  <TableColumn fx:id="ngaygio" prefWidth="75.0" text="NGÀY GIỜ KHỞI HÀNH" />
+                  <TableColumn fx:id="trangthai" prefWidth="75.0" text="TRẠNG THÁI" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <bottom>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <HBox spacing="100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClickThem" prefHeight="25.0" prefWidth="79.0" text="THÊM" />
+                        <Button fx:id="b_hieuchinh" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClickHieuChinh" prefHeight="25.0" prefWidth="90.0" text="HIỆU CHỈNH ">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="b_huychuyen" disable="true" mnemonicParsing="false" onAction="#handleClickXoa" prefHeight="25.0" prefWidth="106.0" text="HỦY CHUYẾN" />
+                        <Button fx:id="b_danhsachve" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="DANH SÁCH VÉ" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" left="200.0" right="200.0" top="10.0" />
+                     </BorderPane.margin>
+                  </HBox>
+               </top>
+               <center>
+                  <GridPane BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="564.0" minWidth="10.0" prefWidth="124.33333333333334" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="611.0" minWidth="10.0" prefWidth="404.3333333333333" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="611.0" minWidth="10.0" prefWidth="197.33333333333337" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="611.0" minWidth="10.0" prefWidth="402.66666666666674" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="52.0" prefWidth="111.0" text="SỐ HIỆU MÁY BAY" />
+                        <Label prefHeight="54.0" prefWidth="125.0" text="SỐ HIỆU CHUYẾN BAY" GridPane.rowIndex="1" />
+                        <Label prefHeight="54.0" prefWidth="125.0" text="SỐ VÉ" GridPane.rowIndex="2" />
+                        <Label prefHeight="57.0" prefWidth="148.0" text="ĐIỂM ĐẾN" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="57.0" prefWidth="148.0" text="NGÀY GIỜ KHỞI HÀNH" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="50.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="sohieuchuyenbayTextfield" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="soveTextfield" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="diemdenTextfield" disable="true" GridPane.columnIndex="3" />
+                        <ChoiceBox fx:id="sohieumaybaychoice" disable="true" prefHeight="25.0" prefWidth="411.0" GridPane.columnIndex="1" />
+                        <Button fx:id="b_ok" disable="true" mnemonicParsing="false" onAction="#handleClickOK" prefHeight="25.0" prefWidth="80.0" text="OK" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="70.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button fx:id="b_cancel" disable="true" mnemonicParsing="false" onAction="#handleClickCancel" prefHeight="25.0" prefWidth="80.0" text="CANCEL" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="50.0" right="50.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <DatePicker fx:id="ngaygioDatePick" disable="true" editable="false" prefHeight="25.0" prefWidth="415.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </center>
+            </BorderPane>
+         </bottom>
+         <top>
+            <Label text="CHUYẾN BAY" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
